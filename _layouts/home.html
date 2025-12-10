@@ -3,101 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+    <title>{{ site.title }} | Data Portfolio</title>
     <style>
         :root {
-            --primary: #1a5276;
-            --secondary: #e67e22;
+            --primary: #1a5276;      /* Deep, trustworthy blue */
+            --secondary: #e67e22;    /* Energetic orange for highlights */
+            --accent: #2ecc71;       /* Success green */
             --light: #f8f9fa;
             --dark: #2c3e50;
             --gray: #95a5a6;
         }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.7;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
             color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeInBody 0.8s ease-out forwards;
+        }
+        @keyframes fadeInBody {
+            to { opacity: 1; }
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
 
-        .intro, .projects {
-            margin-bottom: 60px;
+        /* --- Site Header with Enhanced Banner --- */
+        .site-header {
+            text-align: center;
+            padding: 70px 30px 50px;
+            margin: -20px -20px 60px -20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 12px 35px rgba(26, 82, 118, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        .tagline {
-            font-size: 1.3rem;
-            color: var(--primary);
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.4;
+        }
+        .site-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: white;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        .site-header h1::after {
+            content: '📊';
+            font-family: initial;
+            margin-left: 15px;
+            font-size: 2.8rem;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .site-header .tagline {
+            font-size: 1.5rem;
             font-weight: 300;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+        .site-header nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 0 22px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 10px 5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .site-header nav a:hover {
+            border-bottom-color: var(--secondary);
+            transform: translateY(-2px);
         }
 
+        /* --- Main Content Sections --- */
+        section {
+            margin-bottom: 90px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 850px;
+            margin: 40px auto 80px;
+            line-height: 1.9;
+            padding: 0 20px;
+        }
+
+        /* --- Projects Section --- */
+        .projects h2 {
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .projects h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+
+        /* --- Project Grid & Cards with Images --- */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+            gap: 50px;
             margin-top: 30px;
         }
+        @media (max-width: 650px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         .project-card {
             background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            border-top: 5px solid var(--secondary);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            padding: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eaeaea;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.3s; }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.01);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Project Image */
+        .project-image {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: #f5f7fa; /* Fallback color if image doesn't load */
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         .project-card h3 {
-            margin-top: 0;
             color: var(--dark);
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .project-card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .project-card h3 a:hover {
+            color: var(--primary);
         }
         .project-tech {
             color: var(--gray);
-            font-size: 0.9em;
-            margin: 10px 0;
+            font-size: 1em;
+            font-weight: 500;
+            margin: 10px 0 22px 0;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eee;
         }
         .project-desc {
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
+            flex-grow: 1;
+            line-height: 1.65;
         }
 
+        /* --- Project Links/Buttons --- */
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--primary);
             color: white;
-            padding: 10px 20px;
+            padding: 14px 30px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 0.9em;
-            margin-right: 10px;
-            transition: background-color 0.3s;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            min-width: 160px;
+            text-align: center;
         }
         .btn:hover {
             background-color: var(--dark);
+            transform: translateY(-4px);
+            box-shadow: 0 7px 14px rgba(26, 82, 118, 0.2);
         }
         .btn-secondary {
-            background-color: var(--gray);
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
         .btn-secondary:hover {
-            background-color: #7b8a8b;
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            text-align: center;
+            margin-top: 120px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            color: var(--gray);
+            font-size: 0.95em;
+            padding-bottom: 30px;
+        }
+        .site-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .site-footer a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div>
+        <div class="container">
             <h1>{{ site.title }}</h1>
             <p class="tagline">{{ site.portfolio.tagline | default: "Data Analytics & Business Intelligence Portfolio" }}</p>
             <nav>
                 <a href="/">Home</a>
-                <!-- We'll add an About link later -->
                 <!-- <a href="/about">About</a> -->
-                <a href="https://github.com/Sane-Mfenyana">GitHub</a>
+                <a href="https://github.com/Sane-Mfenyana" target="_blank">GitHub</a>
+                <!-- <a href="[Your LinkedIn URL]" target="_blank">LinkedIn</a> -->
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="intro">
-            <p>Welcome to my portfolio. I build end-to-end data solutions—from SQL and cloud analytics to machine learning and interactive dashboards—that translate complex information into clear, actionable business insights.</p>
+            <p>I build end-to-end data solutions—from cloud data pipelines and machine learning models to interactive business dashboards. My work translates complex analysis into clear, actionable insights that drive strategy and efficiency.</p>
         </section>
 
         <section class="projects">
@@ -105,10 +310,14 @@
             <div class="project-grid">
                 {% for post in site.posts %}
                 <article class="project-card">
+                    <!-- PROJECT IMAGE ADDED HERE -->
+                    <div class="project-image">
+                        <img src="{{ post.preview_image }}" alt="Preview of {{ post.title }} dashboard">
+                    </div>
                     <div class="project-content">
                         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                         <p class="project-tech"><strong>Tech:</strong> {{ post.tech | array_to_sentence_string }}</p>
-                        <p class="project-desc">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                        <p class="project-desc">{{ post.excerpt | strip_html | truncatewords: 38 }}</p>
                         <div class="project-links">
                             <a href="{{ post.project_url }}" class="btn" target="_blank">View Case Study</a>
                             <a href="{{ post.github_url }}" class="btn btn-secondary" target="_blank">View on GitHub</a>
@@ -121,8 +330,10 @@
     </main>
 
     <footer class="site-footer">
-        <div>
-            <p>© {{ site.time | date: '%Y' }} {{ site.title }}. Portfolio hosted on GitHub Pages.</p>
+        <div class="container">
+            <p>© {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+            <p>Portfolio built with Jekyll & hosted on GitHub Pages.</p>
+            <p><a href="https://github.com/Sane-Mfenyana">Explore my other repositories on GitHub</a></p>
         </div>
     </footer>
 </body>
