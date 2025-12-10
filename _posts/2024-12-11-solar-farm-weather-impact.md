@@ -1,4 +1,5 @@
 ---
+preview_image: "/assets/images/solarfarm-preview.jpg"
 layout: post
 title: "Weather’s Impact on South Africa’s Renewable Energy"
 date: 2024-12-11 10:00:00 +0200  # Use tomorrow's or a future date
