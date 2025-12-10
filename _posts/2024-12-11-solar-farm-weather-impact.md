@@ -1,12 +1,12 @@
 ---
-preview_image: "/assets/images/solarfarm-preview.jpg"
 layout: post
 title: "Weather’s Impact on South Africa’s Renewable Energy"
-date: 2024-12-11 10:00:00 +0200  # Use tomorrow's or a future date
+date: 2024-12-11 10:00:00 +0200
 categories: [Data Analysis, Energy, Business Intelligence]
 tech: [SQL, BigQuery ML, Tableau]
 project_url: "https://sane-mfenyana.github.io/SolarFarm-Weather-Impact-SA/"
 github_url: "https://github.com/Sane-Mfenyana/SolarFarm-Weather-Impact-SA"
+preview_image: "/assets/images/solarfarm-preview.jpg"
 ---
 
 **A Business Intelligence analysis using long-term weather data to quantify how solar and wind farm performance varies with meteorological conditions in South Africa.**
