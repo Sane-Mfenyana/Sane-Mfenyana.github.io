@@ -15,6 +15,6 @@ header_pages:
   - index.md
   - about.md # We'll create this later
 
-# Your custom data
+# In _config.yml
 portfolio:
   tagline: "Turning Data into Strategy"
