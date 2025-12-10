@@ -1,0 +1,20 @@
+# _config.yml
+title: "Sane Mfenyana"
+email: "" # Optional
+description: "Data Analytics & Business Intelligence Portfolio"
+baseurl: "" # Leave blank for <username>.github.io
+url: "https://Sane-Mfenyana.github.io" # Your site URL
+
+# Build settings
+theme: minima # Default, clean theme
+plugins:
+  - jekyll-feed
+
+# Site navigation (links at the top)
+header_pages:
+  - index.md
+  - about.md # We'll create this later
+
+# Your custom data
+portfolio:
+  tagline: "Turning Data into Strategy"
