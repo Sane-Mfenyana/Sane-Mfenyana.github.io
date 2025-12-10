@@ -6,7 +6,7 @@ categories: [Data Science, Business Intelligence]
 tech: [SQL, Python, Tableau, GCP]
 project_url: "https://sane-mfenyana.github.io/Predictive-Lead-Scoring-for-Marketing-Funnel-Optimization/"
 github_url: "https://github.com/Sane-Mfenyana/Predictive-Lead-Scoring-for-Marketing-Funnel-Optimization"
-preview_image: "/assets/images/lead-scoring-preview.jpg"
+preview_image: "/assets/images/lead-scoring-preview.png"
 ---
 
 **A data-driven case study building a predictive model to optimize a financial services marketing funnel.**
