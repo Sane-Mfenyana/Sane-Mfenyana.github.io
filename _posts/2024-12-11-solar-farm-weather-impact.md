@@ -6,7 +6,7 @@ categories: [Data Analysis, Energy, Business Intelligence]
 tech: [SQL, BigQuery ML, Tableau]
 project_url: "https://sane-mfenyana.github.io/SolarFarm-Weather-Impact-SA/"
 github_url: "https://github.com/Sane-Mfenyana/SolarFarm-Weather-Impact-SA"
-preview_image: "/assets/images/solarfarm-preview.jpg"
+preview_image: "/assets/images/solarfarm-preview.png"
 ---
 
 **A Business Intelligence analysis using long-term weather data to quantify how solar and wind farm performance varies with meteorological conditions in South Africa.**
