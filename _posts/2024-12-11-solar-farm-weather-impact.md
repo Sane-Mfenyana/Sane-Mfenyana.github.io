@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Weather’s Impact on South Africa’s Renewable Energy"
-date: 2024-11-15 10:00:00 +0200
+date: 2024-12-11 10:00:00 +0200  # Use tomorrow's or a future date
 categories: [Data Analysis, Energy, Business Intelligence]
 tech: [SQL, BigQuery ML, Tableau]
 project_url: "https://sane-mfenyana.github.io/SolarFarm-Weather-Impact-SA/"
