@@ -1,4 +1,5 @@
 ---
+preview_image: "/assets/images/lead-scoring-preview.jpg"
 layout: post
 title: "Predictive Lead Scoring for Marketing Funnel Optimization"
 date: 2024-12-10 10:00:00 +0200
