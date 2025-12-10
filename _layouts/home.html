@@ -85,7 +85,7 @@
     <header class="site-header">
         <div>
             <h1>{{ site.title }}</h1>
-            <p class="tagline">{{ site.portfolio.tagline }}</p>
+            <p class="tagline">{{ site.portfolio.tagline | default: "Data Analytics & Business Intelligence Portfolio" }}</p>
             <nav>
                 <a href="/">Home</a>
                 <!-- We'll add an About link later -->
