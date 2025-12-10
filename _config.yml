@@ -18,3 +18,7 @@ header_pages:
 # In _config.yml
 portfolio:
   tagline: "Turning Data into Strategy"
+# Show future-dated posts
+future: true
+# Explicitly set the number of posts to show on the homepage (optional)
+paginate: 10
